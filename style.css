@@ -3,8 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  /*Padding & border are included in CSS element width & height values*/
-  box-sizing: border-box;
+  box-sizing: border-box; /*Padding & border are included in CSS element width & height values*/
 }
 
 /* Defines global theme color variable that can be called anywhere */
@@ -13,10 +12,8 @@
 }
 
 html {
-  /*Sets default font size to 10px, 1rem=10px*/
-  font-size: 62.5%;
-  /*Page will scroll to sections after clicking on href links*/
-  scroll-behavior: smooth;
+  font-size: 62.5%; /*Sets default font size to 10px, 1rem=10px*/
+  scroll-behavior: smooth; /*Page will scroll to sections after clicking on href links*/
 }
 
 body {
@@ -25,24 +22,34 @@ body {
 }
 
 .header {
-  /*Sets display behavior to flexbox, arranges children in a row*/
-  display: flex;
-  /*Element's defined boundaries*/
-  padding: 2rem;
-  /*Hides content beyond element's defined boundaries*/
-  overflow: hidden;
+  display: flex; /*Sets display behavior to flexbox, arranges children in a row*/
+  justify-content: space-between; /*Distributes items evenly from end-to-end of container*/
+  align-items: center; /*Vertical alignment*/
+  padding: 1.5rem; /*Element's defined boundaries*/
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
+  overflow: hidden; /*Hides content beyond element's defined boundaries*/
+  z-index: 1000; /*Ensures header stacks on top of all other elements*/
   background-color:aliceblue;
-  box-shadow: 0 10px 100px -5px #eee;
+  box-shadow: 0 1rem 10rem -0.5rem #eee;
+}
+
+/*Combined image & name text to be closer together in header*/
+.header-cont {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .header-img-cont {
   /*Element's defined boundaries*/
   margin-right: 1.5rem;
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   overflow: hidden;
-  /*Rounds corners of element, 10rem>>4rem so element becomes circular*/
-  border-radius: 20rem;
+  border-radius: 20rem; /*Rounds corners of element, 20rem>>10rem so element becomes circular*/
   background: rgba(var(--themeColor), 1);
 }
 
@@ -50,44 +57,55 @@ body {
   /*Sets width & height to 100% the height of its container*/
   width: 100%;
   height: 100%;
-  /*Image fills container with unaltered aspect ratio*/
-  object-fit: cover;
+  object-fit: cover; /*Image fills container with unaltered aspect ratio*/
 }
 
 .header-logo {
   font-size: 3rem;
   letter-spacing: 0.5px;
+  font-weight: bold;
   color: #000;
 }
 
 .header-nav-links {
-  /*Removes bullet points from list*/
-  list-style-type: none;
+  display: flex;
+  align-items: center;
+  list-style: none; /*Removes bullet points from list*/
 }
 
 .header-nav-link {
-  color: black;
   text-align: center;
   padding: 1rem;
+  border-radius: 4px; /*Round corners of box*/
   text-decoration: none;
   font-size: 2rem;
-  line-height: 25px;
-  /*Round corners of box*/
-  border-radius: 4px;
-  /*Float link section to the right*/
-  float: right;
+  font-weight: bold;
+  color: #000;
 }
 
 /* Change the background color on mouse-over */
 .header-nav-link:hover {
   background-color: #ddd;
-  color: black;
+  color: #000;
 }
 
 /* Style the active/current link*/
 .header-nav-link.active {
   background-color: dodgerblue;
   color: white;
+}
+
+/*Adjust navigation links display on smaller screens*/
+@media (max-width: 56.25em) {
+  .header-nav-links {
+    padding: 1.3rem 1.5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .header-nav-links {
+    display: none;
+  }
 }
 
 h1 {
@@ -98,4 +116,8 @@ h1 {
 p {
   color: white;
   text-align: left;
+}
+
+.contact {
+  /*background-color: white;*/
 }
