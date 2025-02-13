@@ -21,11 +21,13 @@ body {
   background-color: #7393B3;
 }
 
+/*Header*/
+
 .header {
   display: flex; /*Sets display behavior to flexbox, arranges children in a row*/
   justify-content: space-between; /*Distributes items evenly from end-to-end of container*/
   align-items: center; /*Vertical alignment*/
-  padding: 1.5rem; /*Element's defined boundaries*/
+  padding: 1rem 2.5rem; /*Element's defined boundaries*/
   /*position: fixed;
   top: 0;
   left: 0;
@@ -46,8 +48,8 @@ body {
 .header-img-cont {
   /*Element's defined boundaries*/
   margin-right: 1.5rem;
-  width: 8rem;
-  height: 8rem;
+  width: 4rem;
+  height: 4rem;
   overflow: hidden;
   border-radius: 20rem; /*Rounds corners of element, 20rem>>10rem so element becomes circular*/
   background: rgba(var(--themeColor), 1);
@@ -61,7 +63,7 @@ body {
 }
 
 .header-logo {
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: 0.5px;
   font-weight: bold;
   color: #000;
@@ -75,10 +77,10 @@ body {
 
 .header-nav-link {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem 2rem;
   border-radius: 4px; /*Round corners of box*/
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #000;
 }
@@ -95,6 +97,17 @@ body {
   color: white;
 }
 
+.header-contact {
+  display: flex;
+  align-items: center;
+}
+
+.header-contact-email {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #000;
+}
+
 /*Adjust navigation links display on smaller screens*/
 @media (max-width: 56.25em) {
   .header-nav-links {
@@ -106,6 +119,38 @@ body {
   .header-nav-links {
     display: none;
   }
+}
+
+/*Hero Section*/
+
+.hero {
+  display: flex;
+  height: 100vh; /*Sets element height to 100% viewport height*/
+  min-height: 80rem; /*Sets minimum height relative to root font size 16px*/
+  max-height: 120rem; /*Sets maximum height relative to root*/
+}
+
+.hero-cont{
+  max-width: 120rem;
+  margin: auto; /*Centers element horizontally within parent container*/
+  width: 90%; /*Sets width to 90% of parent container's width*/
+}
+
+.img-cont {
+  /*Element's defined boundaries*/
+  margin-right: 1.5rem;
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  border-radius: 20rem; /*Rounds corners of element, 20rem>>10rem so element becomes circular*/
+  background: rgba(var(--themeColor), 1);
+}
+
+.img {
+  /*Sets width & height to 100% the height of its container*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*Image fills container with unaltered aspect ratio*/
 }
 
 h1 {
